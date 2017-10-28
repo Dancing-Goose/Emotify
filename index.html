@@ -19,8 +19,8 @@
         
    <label id="boxx"><input type="radio" name="recognition-type" value="interim" checked="true"></label> 
 
-<!--     <h3>Log</h3>
-    <div id="log"></div> -->
+    <h3>Log</h3>
+    <div id="log"></div>
 
     <div class="buttons-wrapper">
     <a href ="#" class="button-demo" id="button-play-ws"><i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
@@ -76,6 +76,7 @@
             log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
             setTimeout(function(){
               recognizer.stop();
+              log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
             },5000);
           } catch(ex) {
             log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
@@ -92,7 +93,9 @@
           log.textContent = '';
         });
       }
-
+      
+      
+      transcript.textContent.search("angry");
     </script>
     <script type="text/javascript" src=""></script>
   </body>
