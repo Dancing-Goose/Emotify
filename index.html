@@ -21,7 +21,7 @@
 
     <h3>Log</h3>
     <div id="log"></div>
-
+<p id = "demo"></p>
     <div class="buttons-wrapper">
     <a href ="#" class="button-demo" id="button-play-ws"><i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
 </a>
@@ -78,24 +78,19 @@
               recognizer.stop();
               log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
             },5000);
+            var n = transcript.textContent.search("angry");
+        if(n >=0)
+        {
+          document.getElementById("demo").innerHTML = "You are angry bruh";
+        }
           } catch(ex) {
             log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
           }
         });
 
-        document.getElementById('button-stop-ws').addEventListener('click', function() {
-          recognizer.stop();
-          log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
-        });
-
-        document.getElementById('clear-all').addEventListener('click', function() {
-          transcription.textContent = '';
-          log.textContent = '';
-        });
-      }
       
       
-      transcript.textContent.search("angry");
+      
     </script>
     <script type="text/javascript" src=""></script>
   </body>
